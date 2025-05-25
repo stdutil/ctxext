@@ -1,10 +1,14 @@
 # ctxext
 
-ctxext is a lightweight utility package for working with `context.Context` in Go. It provides convenient functions for safely setting, retrieving, and checking values within a context.
+`ctxext` is a utility package for safely setting and retrieving values in `context.Context` within a Go application.
 
 > [!WARNING]
-> This package must be referenced directly in your application. Do not put it in a package that you intend to publish.
+> This package must be referenced directly in your application and should not be included in a publicly published package.
 
+## Author
+
+Elizalde Baguinon
+Created: May 25, 2025
 
 ## Features
 
@@ -14,13 +18,26 @@ ctxext is a lightweight utility package for working with `context.Context` in Go
 
 ## Installation
 
-To use ctxext, simply import it into your Go project:
+To use ctxext, import it into your Go project:
 
 ```go
 import "github.com/stdutil/ctxext"
 ```
 
 ## Usage
+
+### Defining Context Keys
+
+```go
+package ctxext
+
+type ContextKey string
+
+const (
+    UserName  ContextKey = "user_name"
+    SessionID ContextKey = "session_id"
+)
+```
 
 ### Setting and Retrieving Context Values
 
@@ -37,21 +54,21 @@ func main() {
     ctx := context.Background()
 
     // Store a value in the context
-    ctx = ctxext.SetValue(ctx, "username", "Alice")
+    ctx = ctxext.SetValue(ctx, ctxext.UserName, "Alice")
 
     // Retrieve the value
-    username := ctxext.GetValue[string](ctx, "username")
+    username := ctxext.GetValue[string](ctx, ctxext.UserName)
     fmt.Println("Username:", username) // Output: Username: Alice
 
     // Check if a key exists
-    exists := ctxext.HasValue(ctx, "username")
+    exists := ctxext.HasValue(ctx, ctxext.UserName)
     fmt.Println("Key exists:", exists) // Output: Key exists: true
 }
 ```
 
 ## Why Use ctxext?
 
-- Avoid type collisions with `context.WithValue`
+- Avoid type collisions with built-in `context.Context` storage
 - Type-safe retrieval using generics
 - Simple and efficient utility functions
 
