@@ -13,8 +13,9 @@ import "context"
 type ContextKey string
 
 const (
-	UserName  ContextKey = "user_name"
-	SessionID ContextKey = "session_id"
+	UserName      ContextKey = "user_name"
+	SessionID     ContextKey = "session_id"
+	CacheDuration ContextKey = "cache_duration"
 )
 
 // GetValue retrieves a context value of the specified type.

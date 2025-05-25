@@ -36,6 +36,7 @@ type ContextKey string
 const (
     UserName  ContextKey = "user_name"
     SessionID ContextKey = "session_id"
+    CacheDuration ContextKey = "cache_duration"
 )
 ```
 
