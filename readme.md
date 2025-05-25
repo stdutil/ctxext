@@ -2,6 +2,10 @@
 
 ctxext is a lightweight utility package for working with `context.Context` in Go. It provides convenient functions for safely setting, retrieving, and checking values within a context.
 
+> [!WARNING]
+> This package must be referenced directly in your application. Do not put it in a package that you intend to publish.
+
+
 ## Features
 
 - **GetValue**: Retrieve a value of the specified type from the context.

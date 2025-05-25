@@ -1,3 +1,10 @@
+// ctxext is a package to set and get values from a context
+//
+// This package must be referenced directly in your application.
+// Do not put it in a package that you intend to publish.
+//
+// Author: Elizalde Baguinon
+// Created: May 25, 2025
 package ctxext
 
 import "context"
