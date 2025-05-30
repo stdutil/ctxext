@@ -16,6 +16,7 @@ const (
 	UserName      ContextKey = "user_name"
 	SessionID     ContextKey = "session_id"
 	CacheDuration ContextKey = "cache_duration"
+	SecretKeys    ContextKey = "secret_keys"
 )
 
 // GetValue retrieves a context value of the specified type.
