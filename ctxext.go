@@ -17,6 +17,8 @@ const (
 	SessionID     ContextKey = "session_id"
 	CacheDuration ContextKey = "cache_duration"
 	SecretKeys    ContextKey = "secret_keys"
+	MaxRecords    ContextKey = "max_records"
+	PageSize      ContextKey = "page_size"
 )
 
 // GetValue retrieves a context value of the specified type.
